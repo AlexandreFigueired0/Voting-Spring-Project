@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario Voto Omissao</title>
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/header.css">
+</head>
+<body>
+<section>
+    <header th:replace="header :: header(${currentPage})">...</header>
+  <h2>Obtenha voto por omissao:</h2>
+
+  <form id="formsContainer" action="#" th:action="@{/voto-omissao}" th:object="${voto}" method="get">
+    <label for="eleitorCC">Eleitor CC:</label>
+    <input id="eleitorCC" name="eleitorCC" th:field="*{eleitorCC}" /><br />
+    <label for="votacaoId">Id da Votacao:</label>
+    <input id="votacaoId" name="votacaoId" th:field="*{votacaoId}" /><br />
+    <input type="submit" value="Obter voto" />
+  </form>
+</section>
+
+</body>
+</html>

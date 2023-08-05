@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Apresenta Projeto de Lei</title>
+    <link rel="stylesheet" href="../css/forms.css">
+    <link rel="stylesheet" href="../css/header.css">
+</head>
+<body>
+    <header th:replace="header :: header(${currentPage})">...</header>
+
+    <h2>Apresente um Projeto de Lei: </h2>
+
+    <form id="formsContainer" action="#" th:action="@{/projetos-de-lei}" th:object="${projeto}" method="post" enctype="multipart/form-data">
+        <label for="titulo">Titulo:</label>
+        <input name="titulo" th:field="*{titulo}" /><br />
+
+        <label for="tema">Tema:</label>
+        <input name="tema" th:field="*{tema}" /><br />
+
+        <label for="delegadoCC">Delegado proponente cc:</label>
+        <input name="delegadoCC"  th:field="*{ccDelegadoProponente}"/><br />
+
+        <label for="data">Data (yyyy/MM/dd HH:mm:ss):</label>
+        <input name="data" th:field="*{dataValidadeString}" /><br />
+
+        <label for="descricao">Descricao:</label>
+        <input name="descricao" th:field="*{descricao}" /><br />
+
+        <label for="pdfFile">Anexo PDF:</label>
+        <input type="file" name="pdfFile" accept=".pdf" /><br />
+
+        <input type="submit" value="Apresentar" />
+    </form>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Header</title>
+</head>
+<body>
+<header th:fragment="header(currPage)">
+    <a th:href="@{/}">Menu Principal</a>
+    <a th:unless="'listaVotacoes' == ${currPage}" th:href="@{/votacoes-em-curso}">Lista de Votações</a>
+    <a th:unless="'apresentaProjetos' == ${currPage}" th:href="@{/projetos-de-lei/apresenta}">Apresentar Projeto de Lei</a>
+    <a th:unless="'listaProjetos' == ${currPage}" th:href="@{/projetos-de-lei}">Consultar Projetos de Lei</a>
+    <a th:unless="'apoiaProjetos' == ${currPage}" th:href="@{/projetos-de-lei/apoia}">Apoiar Projeto de Lei</a>
+    <a th:unless="'escolheDelegado' == ${currPage}" th:href="@{/escolhe-delegado}">Escolher Delegado</a>
+</header>
+</body>
+</html>

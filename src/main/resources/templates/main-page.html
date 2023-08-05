@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to Democracia2</title>
+    <link rel="stylesheet" href="css/main-page.css">
+</head>
+<body>
+    <h1>Welcome to Democracia2!</h1>
+    <div class="container">
+        <div class="btn-group">
+            <a th:href="@{/votacoes-em-curso}">Listar as Votações em curso</a>
+            <a th:href="@{projetos-de-lei/apresenta}">Apresentar um Projeto de Lei</a>
+            <a th:href="@{/projetos-de-lei}">Consultar Projetos de Lei</a>
+            <a th:href="@{projetos-de-lei/apoia}">Apoiar Projeto de Lei</a>
+            <a th:href="@{/escolhe-delegado}">Escolher Delegado</a>
+        </div>
+    </div>
+</body>
+</html>

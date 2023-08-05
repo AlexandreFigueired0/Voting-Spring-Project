@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Projeto de Lei Detalhes</title>
+    <link rel="stylesheet" href="../css/projeto-de-lei-details.css">
+    <link rel="stylesheet" href="../css/header.css">
+</head>
+<body>
+
+<header th:replace="header :: header(${currentPage})">...</header>
+
+<h2>Projeto de Lei:</h2>
+
+<table id="projetoDetailsContainer">
+    <tr>
+        <th>Titulo:</th>
+        <td th:text="${projeto.titulo}"></td>
+    </tr>
+    <tr>
+        <th>Tema:</th>
+        <td th:text="${projeto.tema}"></td>
+    </tr>
+    <tr>
+        <th>CC do delegado proponente:</th>
+        <td th:text="${projeto.ccDelegadoProponente}"></td>
+    </tr>
+    <tr>
+        <th>Data de validade:</th>
+        <td th:text="${projeto.dataValidadeString}"></td>
+    </tr>
+    <tr>
+        <th>Numero de apoiantes:</th>
+        <td th:text="${projeto.nApoios}"></td>
+    </tr>
+    <tr>
+        <th>Descricao:</th>
+        <td th:text="${projeto.descricao}"></td>
+    </tr>
+    <tr>
+        <th>Anexo PDF:</th>
+        <td>
+            <a th:href="@{'/api/projetos-de-lei/download-pdf/' + ${projeto.id}}">Download</a>
+        </td>
+    </tr>
+
+</table>
+
+</body>
+</html>

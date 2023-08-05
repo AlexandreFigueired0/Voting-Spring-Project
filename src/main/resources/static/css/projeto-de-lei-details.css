@@ -1,0 +1,9 @@
+th {
+    text-align: right;
+}
+
+#projetoDetailsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

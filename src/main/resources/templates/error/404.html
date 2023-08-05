@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="../css/header.css">
+</head>
+<html>
+<header th:replace="header :: header(${currentPage})">...</header>
+
+    <body>
+        <h2>ERROR 404 - NOT FOUND</h2>
+        <p th:text="${errorMsg}"></p>
+    </body>
+</html>

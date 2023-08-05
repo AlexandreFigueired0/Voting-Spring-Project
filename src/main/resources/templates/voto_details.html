@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt_PT">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalhes de Voto</title>
+    <link rel="stylesheet" href="css/voto-omissao-valor.css">
+    <link rel="stylesheet" href="css/header.css">
+</head>
+
+<body>
+<header th:replace="header :: header(${currentPage})">...</header>
+    <div th:if="${votoPorOmissao == null}">
+      <h2>O voto nao existe.</h2>
+    </div>
+
+    <div id="valorContainer" th:if="${votoPorOmissao != null}">
+      <h2> Valor do voto: </h2>
+      <p th:if="${votoPorOmissao.getValorVoto() == true}">Aprovado</p>
+      <p th:if="${votoPorOmissao.getValorVoto() == false}">Rejeitado</p>
+      <a th:href="@{/votos}">Vote aqui</a>
+    </div>
+</body>
+</html>

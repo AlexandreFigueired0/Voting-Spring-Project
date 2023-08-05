@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Projetos de Lei</title>
+  <link rel="stylesheet" href="css/projetos-de-lei.css">
+  <link rel="stylesheet" href="css/header.css">
+</head>
+<body>
+  <header th:replace="header :: header(${currentPage})">...</header>
+
+  <h2> Projetos de Lei:</h2>
+  <div id="projetos_container">
+    <p th:if="${projetosDeLei.empty}">
+      Não ha projetos de lei disponiveis
+    </p>
+
+
+    <table th:unless="${projetosDeLei.empty}">
+      <thead>
+      <tr>
+        <th>Id</th>
+        <th>Titulo</th>
+        <th>Tema</th>
+        <th>Detalhes do Projeto</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="projeto : ${projetosDeLei}">
+        <td th:text="${projeto.id}"></td>
+        <td th:text="${projeto.titulo}"></td>
+        <td th:text="${projeto.tema}"></td>
+        <td> <a th:href="@{/projetos-de-lei/} + ${projeto.id}" th:text="@{Detalhes}">...</a></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+
+</body>
+</html>

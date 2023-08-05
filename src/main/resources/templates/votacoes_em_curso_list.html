@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt_PT">
+<head>
+    <meta charset="UTF-8">
+    <title>Votacoes em Curso</title>
+    <link rel="stylesheet" href="css/votacoes.css">
+    <link rel="stylesheet" href="css/header.css">
+</head>
+<body>
+    <header th:replace="header :: header(${currentPage})">...</header>
+
+  <h2>Votacoes em curso:</h2>
+  <div id="votacoesContainer">
+    <p th:if="${votacoesEmCurso.empty}">
+      Não existem votacoes em curso.
+    </p>
+
+    <table th:unless="${votacoesEmCurso.empty}">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Projeto de Lei</th>
+          <th>Votos Positivos</th>
+          <th>Votos Negativos</th>
+          <th>Data de Validade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="v : ${votacoesEmCurso}">
+          <td th:text="${v.id}">...</td>
+          <td><a th:href="@{/projetos-de-lei/} + ${v.projetoDeLei.id}" th:text="${v.projetoDeLei.titulo}">...</a></td>
+          <td th:text="${v.votosPositivos}">...</td>
+          <td th:text="${v.votosNegativos}">...</td>
+          <td th:text="${v.dataValidadeString}">...</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div id="opcoesVotacoes" th:unless="${votacoesEmCurso.empty}">
+    <a th:href="@{/voto-omissao-forms}">Obter voto por omissao</a>
+    <a th:href="@{/votos}">Vote aqui</a>
+  </div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Apoiar Projeto de Lei</title>
+    <link rel="stylesheet" href="../css/forms.css">
+    <link rel="stylesheet" href="../css/header.css">
+</head>
+<body>
+    <header th:replace="header :: header(${currentPage})">...</header>
+
+    <h2>Apoie um Projeto de Lei: </h2>
+
+    <form id="formsContainer" action="#" th:action="@{/projetos-de-lei/apoia}" th:object="${eap}" method="post">
+      <label for="eleitorCC">Eleitor CC:</label><input id="eleitorCC" name="eleitorCC" th:field="*{eleitorCC}"  /><br />
+      <label for="projetoId">Id Projeto de Lei:</label><input id="projetoId" name="projetoId" th:field="*{projetoId}" /><br />
+      <input type="submit" value="Apoiar" />
+    </form>
+
+</body>
+</html>

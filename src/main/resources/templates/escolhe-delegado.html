@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/header.css">
+</head>
+<body>
+   <header th:replace="header :: header(${currentPage})">...</header>
+
+  <h2>Escolha um Delegado:</h2>
+  <form id="formsContainer" action="#" th:action="@{/escolhe-delegado}" th:object="${eleitorDelegadoAssociacaoDTO}" method="post">
+    <label for="eleitorCC">Eleitor CC: </label><input id="eleitorCC" name="eleitorCC" th:field="*{eleitorCC}"/><br/>
+    <label for="delegadoCC">Delegado CC: </label><input id="delegadoCC" name="delegadoCC" th:field="*{delegadoCC}"/><br/>
+    <label for="tema">Tema: </label><input id="tema" name="tema" th:field="*{tema}"/><br/>
+    <input type="submit" value="Escolher"/>
+  </form>
+</body>
+</html>

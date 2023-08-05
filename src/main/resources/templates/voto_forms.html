@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt_PT">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Voto</title>
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/header.css">
+</head>
+  <section>
+    <header th:replace="header :: header(${currentPage})">...</header>
+    <h2>Vote aqui:</h2>
+
+    <form id="formsContainer" action="#" th:action="@{/votos}" th:object="${novoVoto}" method="post">
+      <label for="eleitorCC">Eleitor CC:</label>
+      <input id="eleitorCC" name="eleitorCC" th:field="*{eleitorCC}" /><br />
+      <label for="votacaoId">Id da Votacao:</label>
+      <input id="votacaoId" name="votacaoId" th:field="*{votacaoId}" /><br />
+      <label for="valorVoto">Voto:</label>
+      <select id="valorVoto" th:field="*{valorVoto}">
+        <option th:each="v : ${valoresVoto}" th:value="${v}" th:text="${v}? 'Aprovar' : 'Rejeitar'" />
+      </select>
+      <br />
+      <input type="submit" value="Votar" />
+    </form>
+  </section>
+<body>
+
+</body>
+</html>

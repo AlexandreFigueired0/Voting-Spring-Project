@@ -1,0 +1,20 @@
+th, td {
+    border: 1px solid;
+    padding: 5px;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+#votacoesContainer {
+    display: flex;
+    justify-content: center;
+}
+
+#opcoesVotacoes {
+    display: flex;
+    justify-content: center;
+    gap: 2%;
+}
